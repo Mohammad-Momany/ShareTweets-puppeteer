@@ -1,7 +1,8 @@
 const puppeteer = require("puppeteer"),
-    { selectByName, selectByTestid } = require('./utilities'),
-    { TWITTER_USERNAME, TWITTER_PASSWORD } = require('./userInformation');
+    { selectByName, selectByTestid } = require('./selectors'),
+    { TWITTER_USERNAME, TWITTER_PASSWORD, THE_HASHTAG } = require('./getUserInformation');
 describe('Share Posts In Twitter', () => {
+
     let browser, page;
     const URL = "https://twitter.com/"
     before(async() => {
@@ -9,8 +10,7 @@ describe('Share Posts In Twitter', () => {
         page = await browser.newPage();
     })
 
-
-    it('Login Twitter', async function() {
+    it('Login Twitter', async() => {
         const usernameOrEmail = selectByName("username_or_email")
         await page.goto(`${URL}login`);
         await page.waitForSelector(usernameOrEmail);
@@ -19,23 +19,23 @@ describe('Share Posts In Twitter', () => {
         await page.click(selectByTestid("LoginForm_Login_Button"));
     })
 
-    it('Share Post', async function() {
+    it('Share Tweets', async() => {
         let sign = "",
-            sign_plus = "-",
-            hashTag = "#فلسطين\n#SaveSheikhJarrah\n#المسجد_الاقصى";
+            sign_plus = ".",
+            hashTag = THE_HASHTAG;
 
         const tweetTextarea = selectByTestid("tweetTextarea_0"),
-            maxLen = 240
+            maxLen = 240;
+
         await page.goto(`${URL}home`);
 
         for (let i = 0; i < 964; i++) {
-            await Promise.race([
-                page.waitForSelector(tweetTextarea).then(async() => {
-                    await page.click(tweetTextarea)
-                    await page.type(tweetTextarea, `${hashTag}\n${sign}`)
-                }),
-            ]);
-            if (i === (maxLen || (maxLen * 2) || (maxLen * 3))) { sign = "", hashTag += " " }
+            await page.waitForSelector(tweetTextarea).then(async() => {
+                await page.click(tweetTextarea)
+                await page.type(tweetTextarea, `${hashTag}\n${sign}`)
+            })
+
+            if (i === (maxLen || (maxLen * 2) || (maxLen * 3))) { sign = "", hashTag += " "; }
             sign += sign_plus;
             await page.click(selectByTestid("tweetButtonInline")),
                 page.reload(),

@@ -1,0 +1,16 @@
+{
+    "name": "automated_testing",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --timeout=6748000 ./tests"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chai": "^4.3.4",
+        "mocha": "^8.4.0",
+        "puppeteer": "^9.1.1"
+    }
+}

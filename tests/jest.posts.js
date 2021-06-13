@@ -4,14 +4,15 @@ const puppeteer = require("puppeteer"),
 describe('Share Posts In Twitter', () => {
 
     let browser, page;
-    const URL = "https://twitter.com/"
+    const URL = "https://twitter.com/";
+
     before(async() => {
         browser = await puppeteer.launch({ headless: false, slowMo: 1 });
         page = await browser.newPage();
     })
 
     it('Login Twitter', async() => {
-        const usernameOrEmail = selectByName("username_or_email")
+        const usernameOrEmail = selectByName("username_or_email");
         await page.goto(`${URL}login`);
         await page.waitForSelector(usernameOrEmail);
         await page.type(usernameOrEmail, TWITTER_USERNAME);
@@ -37,12 +38,13 @@ describe('Share Posts In Twitter', () => {
 
             if (i === (maxLen || (maxLen * 2) || (maxLen * 3))) { sign = "", hashTag += " "; }
             sign += sign_plus;
-            await page.click(selectByTestid("tweetButtonInline")),
-                page.reload(),
-                page.waitForTimeout(5000);
+            await page.click(selectByTestid("tweetButtonInline"));
+            await page.reload();
+            await page.waitForTimeout(5000);
         }
 
     })
+
     after(async() => {
         await browser.close()
     })

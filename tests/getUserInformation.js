@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const userInformation = fs.readFileSync("tests/userInfo.txt").toString().split("\n"),
+const userInformation = fs.readFileSync("tests/userInformation.txt").toString().split("\n"),
     TWITTER_USERNAME = userInformation[0],
     TWITTER_PASSWORD = userInformation[1],
     THE_HASHTAG = userInformation[2];

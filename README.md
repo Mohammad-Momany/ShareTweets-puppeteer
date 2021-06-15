@@ -33,7 +33,7 @@ Click on Download ZIP
 Click on <span style="color:red">ShareTweets-puppeteer-main.zip</span> then Extract files    
 <span style="color:red">ShareTweets-puppeteer-main.zip</span> انقر على ثم استخرج الملفات
 
-![Extract Here](./images/Extract_Here.PNG)
+![Extract Here](./images/Extract_Here.png)
  
 > **Step 4**    
 

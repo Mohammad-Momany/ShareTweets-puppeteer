@@ -22,15 +22,15 @@ describe('Share Posts In Twitter', () => {
 
     it('Share Tweets', async() => {
         let sign = "",
-            sign_plus = ".",
+            sign_plus = "!",
             hashTag = THE_HASHTAG;
 
         const tweetTextarea = selectByTestid("tweetTextarea_0"),
-            maxLen = 240;
+            maxLen = THE_HASHTAG.length - 280;
 
         await page.goto(`${URL}home`);
 
-        for (let i = 0; i < 964; i++) {
+        for (let i = 0; i < (maxLen * 4); i++) {
             await page.waitForSelector(tweetTextarea).then(async() => {
                 await page.click(tweetTextarea)
                 await page.type(tweetTextarea, `${hashTag}\n${sign}`)

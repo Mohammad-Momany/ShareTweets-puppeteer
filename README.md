@@ -60,6 +60,8 @@ Change the information
 then save the file ثم احفظ الملف
 
 > **Final Step**  
+
+
 Type  **npm test**  اكتب
 ![Extract Here](./images/Run_the_test.PNG)
 

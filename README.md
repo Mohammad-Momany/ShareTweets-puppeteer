@@ -4,7 +4,7 @@
 
 > **Step 1** 
 
-Open this link  [Node link]("https://nodejs.org/en/download/")  افتح هذا الرابط
+Open this link  [Node link](https://nodejs.org/en/download/)  افتح هذا الرابط
 
 Click on Windows Installer or macOS Installer 
  ![Download Node](./images/1_Download.PNG)
@@ -23,7 +23,7 @@ Click on Windows Installer or macOS Installer
 ---
 > **Step 2** 
 
-Open this link  **[Code link]("https://github.com/Mohammad-W-Momani/ShareTweets-puppeteer")**  افتح هذا الرابط
+Open this link  **[Code link](https://github.com/Mohammad-W-Momani/ShareTweets-puppeteer)**  افتح هذا الرابط
 
 Click on Download ZIP
 ![Download Code](./images/Download_Code.PNG)

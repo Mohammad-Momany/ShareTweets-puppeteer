@@ -26,7 +26,7 @@ Click on Windows Installer or macOS Installer
 Open this link  **[Code link]("https://github.com/Mohammad-W-Momani/ShareTweets-puppeteer")**  افتح هذا الرابط
 
 Click on Download ZIP
-![Download Code](././images/Download_Code.PNG)
+![Download Code](./images/Download_Code.PNG)
 
 > **Step 3** 
 

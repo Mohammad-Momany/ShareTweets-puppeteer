@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer"),
     { selectByName, selectByTestid } = require('./selectors'),
-    { TWITTER_USERNAME, TWITTER_PASSWORD, THE_HASHTAG } = require('./getUserInformation');
+    { TWITTER_USERNAME, TWITTER_PASSWORD, THE_HASHTAG, NUMBER_OF_REPETITIONS } = require('./getUserInformation');
 describe('Share Posts In Twitter', () => {
 
     let browser, page;
@@ -17,7 +17,8 @@ describe('Share Posts In Twitter', () => {
         await page.waitForSelector(usernameOrEmail);
         await page.type(usernameOrEmail, TWITTER_USERNAME);
         await page.type(selectByName("password"), TWITTER_PASSWORD);
-        await page.click(selectByTestid("LoginForm_Login_Button"));
+        await page.keyboard.down('Tab')
+        await page.keyboard.press('Enter')
     })
 
     it('Share Tweets', async() => {
@@ -26,14 +27,16 @@ describe('Share Posts In Twitter', () => {
             hashTag = THE_HASHTAG;
 
         const tweetTextarea = selectByTestid("tweetTextarea_0"),
-            maxLen = THE_HASHTAG.length - 280;
+
+            maxLen = (NUMBER_OF_REPETITIONS !== 0 && typeof NUMBER_OF_REPETITIONS === "number" &&
+                NUMBER_OF_REPETITIONS < 280) ? NUMBER_OF_REPETITIONS : 280 - hashTag.length * 4
 
         await page.goto(`${URL}home`);
 
-        for (let i = 0; i < (maxLen * 4); i++) {
+        for (let i = 0; i < maxLen; i++) {
             await page.waitForSelector(tweetTextarea).then(async() => {
-                await page.click(tweetTextarea)
-                await page.type(tweetTextarea, `${hashTag}\n${sign}`)
+                await page.click(tweetTextarea);
+                await page.type(tweetTextarea, `${hashTag}\n${sign}`);
             })
 
             if (i === (maxLen || (maxLen * 2) || (maxLen * 3))) { sign = "", hashTag += " "; }

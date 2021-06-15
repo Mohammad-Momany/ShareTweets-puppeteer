@@ -7,7 +7,7 @@
 Open this link  **[Node link]("https://nodejs.org/en/download/")**  افتح هذا الرابط
 
 Click on Windows Installer or macOS Installer 
- ![Download Node](images\1_Download.PNG)
+ ![Download Node](images/1_Download.PNG)
  ![Download Node](images\2_Download_2.PNG)
 
 

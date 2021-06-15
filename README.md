@@ -26,7 +26,7 @@ Click on Windows Installer or macOS Installer
 Open this link  **[Code link]("https://github.com/Mohammad-W-Momani/ShareTweets-puppeteer")**  افتح هذا الرابط
 
 Click on Download ZIP
-![Download Code](./images/Download_Code.png)
+![Download Code](./images/Download_Code.PNG)
 
 > **Step 3** 
 
@@ -41,7 +41,7 @@ Click on <span style="color:red">ShareTweets-puppeteer-main </span> file then co
 
 ثم انسخ المسار <span style="color:red">ShareTweets-puppeteer-main </span> انقر على ملف
 
-![Extract Here](./images/folder_path.png)
+![Extract Here](./images/folder_path.PNG)
 
 > **Step 5**  
 
@@ -49,18 +49,18 @@ Click on <span style="color:red">ShareTweets-puppeteer-main </span> file then co
 
 2. Type cd the path who copied  
 ثم  المسار الذي نسخته cd اكتب 
-![Extract Here](./images/go_to_folder_path.png)
+![Extract Here](./images/go_to_folder_path.PNG)
 Type **npm i** اكتب 
-![Extract Here](./images/Install_package.png)
+![Extract Here](./images/Install_package.PNG)
 Open userInformation file
-![Extract Here](./images/open_userinfo.png)
+![Extract Here](./images/open_userinfo.PNG)
 
 Change the information 
-![Extract Here](./images/change_the_info.png)
+![Extract Here](./images/change_the_info.PNG)
 then save the file ثم احفظ الملف
 
 > **Final Step**  
 Type **npm test** اكتب
-![Extract Here](./images/Run_the_test.png)
+![Extract Here](./images/Run_the_test.PNG)
 
 

@@ -15,7 +15,7 @@ Click on Windows Installer or macOS Installer
 ![Download Node](./images/2_Install_node.png)
 ![Download Node](./images/3_Install_node.png)
 ![Download Node](./images/4_Install_node.png)
-![Download Node](./images/Install_npm.png)
+![Download Node](./images/Install_npm.PNG)
 ![Download Node](./images/don't_check.jpg)
 ![Download Node](./images/5_Install_node.png)
 ![Download Node](./images/6_Install_node.png)
@@ -60,7 +60,7 @@ Change the information
 then save the file ثم احفظ الملف
 
 > **Final Step**  
-Type **npm test** اكتب
+Type  **npm test**  اكتب
 ![Extract Here](./images/Run_the_test.PNG)
 
 
